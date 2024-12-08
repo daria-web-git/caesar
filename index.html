@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифрування Цезаря</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header><h1>Шифрування Цезаря</h1></header>
+    <main>
+        <h1>Теорія</h1>
+        <p><a href="https://uk.wikipedia.org/wiki/Шифр_Цезаря">Шифр Цезаря</a> або шифр зсуву – симетричний моноалфавітний алгоритм шифрування, в якому кожна буква відкритого тексту заміняється на ту, що віддалена від неї в алфавіті на сталу кількість позицій. Римський імператор Юлій Цезар використовував для приватного листування шифр зсуву з ключем 3 – замість літери A підставляв D, замість B – E і так далі.</p>
+        <h1>Принцип дії</h1>
+        <p>Принцип дії полягає в тому, щоб циклічно зсунути алфавіт, а ключ – це кількість літер, на які робиться зсув.</p>
+        <p>Якщо зіставити кожному символу алфавіту його порядковий номер (нумеруючи з 0), то шифрування і дешифрування можна виразити формулами:</p>
+        <p class="formula">y = (x + k) mod n</p>
+        <p class="formula">x = (y - k) mod n</p>
+        <p>де <span class="formula">x</span> – порядковий номер символу відкритого тексту, <span class="formula">y</span> – порядковий номер символу шифрованого тексту, <span class="formula">n</span> – потужність алфавіту, а <span class="formula">k</span> – ключ.</p>
+        <h1>Програмна реалізація шифру</h1>
+        <p>Вхідний текст</p>
+        <textarea id="input"></textarea>
+        <p>Вихідний текст</p>
+        <textarea id="output"></textarea>
+        <label>Ключ </label>
+        <input id="key" type="number" value="3" min="1" max="33">
+        <button onclick="Encrypt()">Зашифрувати</button>
+        <button onclick="Decrypt()">Расшифрувати</button>
+    </main>
+    <footer><h1>Борисова Дар'я, 2024</h1></footer>
+    <script src="js/caesar.js"></script>
+</body>
+</html>
